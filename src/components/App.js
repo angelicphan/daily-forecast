@@ -9,7 +9,7 @@ import Button from "react-bootstrap/Button";
 
 import apiKeys from "../APIKeys";
 import "../css/App.css";
-import logo from "../images/logo.svg";
+import forecast_logo from "../images/forecast_logo.svg";
 import Week from "./Week";
 
 // App will be the Outer component that is called by the DOM.
@@ -100,12 +100,12 @@ class App extends React.Component {
         <Navbar bg="light" variant="light" sticky="top">
           <Navbar.Brand>
             <img
-              src={logo}
+              src={forecast_logo}
               width="30"
               height="30"
               className="d-inline-block align-top"
               alt="Forcast logo"
-            />
+            />{" "}
             Forecast
           </Navbar.Brand>
         </Navbar>
