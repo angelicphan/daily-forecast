@@ -9,17 +9,23 @@ class Day extends React.Component {
   // Constructor
   constructor(props) {
     super(props);
+    // Flag for whether or not to show a day's weather details
     this.state = {
-      show: false // Flag for whether or not to show a day's weather details
+      show: false
     };
+    this.handleDeetsView = this.handleDeetsView.bind(this);
   }
 
   // ****************
 
   // Opens or closes Day detail Modal by updating the flag
   handleDeetsView() {
+    var flag = false;
+    if (this.state.show === false) {
+      flag = true;
+    }
     this.setState({
-      show: this.state.show ? !this.state.show : this.state.show
+      show: flag
     });
   }
 
@@ -50,7 +56,7 @@ class Day extends React.Component {
             </td>
           </tr>
           <tr>
-            <td>
+            <td id="Basic-Temp">
               {dayTemp}&deg; / {nightTemp}&deg;
             </td>
           </tr>
@@ -80,17 +86,17 @@ class Day extends React.Component {
         className="Day"
         show={this.state.show}
         onHide={this.handleDeetsView}
+        animation={false}
       >
         <Modal.Header closeButton>
           <Modal.Title>
-            {this.props.date} {this.props.day}
+            {this.props.name} {this.props.date}
           </Modal.Title>
         </Modal.Header>
         <Modal.Body className="Day-Body">
-          Today: {today.weather[0].description}, with a high of
-          {today.temp.max}
-          &deg; and a low of {today.temp.min}&deg;.
-          <Table size="sm">
+          {today.weather[0].description}, with a high of {today.temp.max}
+          &deg; and a low of {today.temp.min}&deg;
+          <Table size="sm" bordered>
             <tbody>
               <tr>
                 <td>
@@ -130,8 +136,8 @@ class Day extends React.Component {
                   <div>{today.clouds}%</div>
                 </td>
                 <td>
-                  <div className="Table-label">VISIBILITY</div>
-                  <div>{today.visibility} m</div>
+                  <div className="Table-label">UV INDEX</div>
+                  <div>{today.uvi}</div>
                 </td>
               </tr>
             </tbody>
