@@ -175,7 +175,7 @@ function calculateWindDeg(wind_deg) {
     (wind_deg >= 0 && wind_deg <= 11.25)
   ) {
     return "N";
-  } else if (wind_deg > 11.25 && wind_deg >= 33.75) {
+  } else if (wind_deg > 11.25 && wind_deg <= 33.75) {
     return "NNE";
   } else if (wind_deg > 33.75 && wind_deg <= 56.25) {
     return "NE";
