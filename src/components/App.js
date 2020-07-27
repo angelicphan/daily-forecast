@@ -49,7 +49,7 @@ class App extends React.Component {
       return;
     }
     // First, get the Longitude and Latitude of the location entered
-    const locationURL = `http://www.mapquestapi.com/geocoding/v1/address?key=${process.env.REACT_APP_MAP_QUEST_API}&location=${this.state.location}`;
+    const locationURL = `https://www.mapquestapi.com/geocoding/v1/address?key=${process.env.REACT_APP_MAP_QUEST_API}&location=${this.state.location}`;
 
     fetch(locationURL)
       .then(res => res.json())
