@@ -1,4 +1,4 @@
-# forecast
+# daily-forecast
 
 This is a weather web app that is created using React and the OpenWeatherMap API,
 and deployed with Heroku: (https://daily-forecast.herokuapp.com/).
