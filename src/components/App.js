@@ -105,7 +105,7 @@ class App extends React.Component {
               className="d-inline-block align-top"
               alt="Forcast logo"
             />{" "}
-            Forecast
+            Daily Forecast
           </Navbar.Brand>
         </Navbar>
         {/**************** App Body ******************/}
