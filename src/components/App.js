@@ -7,7 +7,6 @@ import InputGroup from "react-bootstrap/InputGroup";
 import FormControl from "react-bootstrap/FormControl";
 import Button from "react-bootstrap/Button";
 
-import apiKeys from "../APIKeys";
 import "../css/App.css";
 import forecast_logo from "../images/forecast_logo.svg";
 import Week from "./Week";
