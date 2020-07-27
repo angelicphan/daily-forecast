@@ -38,7 +38,7 @@ class Day extends React.Component {
     const icon = today.weather[0].icon;
     const dayTemp = today.temp.day.toFixed(0);
     const nightTemp = today.temp.night.toFixed(0);
-    const imageURL = `http://openweathermap.org/img/wn/${icon}@2x.png`;
+    const imageURL = `https://openweathermap.org/img/wn/${icon}@2x.png`;
 
     return (
       <Table className="Day" borderless>
