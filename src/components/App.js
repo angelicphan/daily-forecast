@@ -135,7 +135,7 @@ class App extends React.Component {
         <div className="App-footer">
           <Navbar bg="light" variant="light">
             <Nav.Item className="ml-auto">
-              <FontAwesomeIcon icon={faCopyright} /> Angelic Phan
+              <FontAwesomeIcon icon={faCopyright} /> 2020 Angelic Phan
             </Nav.Item>
           </Navbar>
         </div>
