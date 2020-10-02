@@ -23,7 +23,7 @@ class App extends React.Component {
       lat: 45.516018,
       lon: -122.681425,
       // Daily weather info for the week
-      weekInfo: []
+      weekInfo: [],
     };
 
     // Takes care of the location input from user
@@ -52,18 +52,18 @@ class App extends React.Component {
     const locationURL = `https://www.mapquestapi.com/geocoding/v1/address?key=${process.env.REACT_APP_MAP_QUEST_API}&location=${this.state.location}`;
 
     fetch(locationURL)
-      .then(res => res.json())
-      .then(data => {
+      .then((res) => res.json())
+      .then((data) => {
         // Save the queried latitudes and longitudes to the state
         console.log("Location Data Fetched", data);
         this.setState({
           lat: data.results[0].locations[0].latLng.lat,
-          lon: data.results[0].locations[0].latLng.lng
+          lon: data.results[0].locations[0].latLng.lng,
         });
         // Get Weather data
         this.getWeatherData();
       })
-      .catch(error => console.error("error", error)); // Catch any errors
+      .catch((error) => console.error("error", error)); // Catch any errors
   }
 
   // ****************
@@ -79,13 +79,13 @@ class App extends React.Component {
     const weatherURL = `https://api.openweathermap.org/data/2.5/onecall?lat=${this.state.lat}&lon=${this.state.lon}&units=${units}&exclude=${part}&appid=${process.env.REACT_APP_OPEN_WEATHER_MAP_API}`;
 
     fetch(weatherURL)
-      .then(res => res.json())
-      .then(data => {
+      .then((res) => res.json())
+      .then((data) => {
         // Save queried weather data for the week to the state
         console.log("Weather Data Fetched", data);
         this.setState({ weekInfo: data.daily });
       })
-      .catch(error => console.error("error", error)); // Catch errors
+      .catch((error) => console.error("error", error)); // Catch errors
   }
 
   // ****************
@@ -112,6 +112,7 @@ class App extends React.Component {
         <div className="App-body">
           {/**************** Location Search ******************/}
           <div className="Search">
+            <label>ENTER A LOCATION</label>
             <InputGroup>
               <FormControl
                 value={this.state.location}

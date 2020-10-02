@@ -31,3 +31,7 @@
 .Week {
   margin: 3em;
 }
+
+label {
+  color: white;
+}
